@@ -13,5 +13,9 @@ panic = "abort"
 [profile.release]
 panic = "abort"
 
-[dependencies.ogc-rs]
-git = "https://github.com/rust-wii/ogc-rs.git"
+[dependencies]
+libc = "0.2"
+
+[dependencies.arrayvec]
+version = "0.5.2"
+default-features = false

@@ -11,16 +11,17 @@
     "linker": "powerpc-eabi-gcc",
     "linker-flavor": "gcc",
     "linker-is-gnu": true,
+    "no-default-libraries": false,
     "os": "rvl-ios",
     "pre-link-args": {
         "gcc": [
-            "-mrvl",
-            "-meabi",
-            "-mhard-float"
+            "-LE:/devkitPro/wut/lib",
+            "-lwut",
+            "-specs=E:/devkitPro/wut/share/wut.specs"
         ]
     },
     "panic-strategy": "abort",
-    "relocation-model": "static",
+    "relocation-model": "pic",
     "target-env": "newlib",
     "target-endian": "big",
     "target-os": "rvl-ios",
