@@ -1,21 +1,12 @@
 [package]
-name = "rust-wii"
+name = "wut-rust-demo"
 version = "0.1.0"
-authors = ["rust-wii"]
+authors = ["wut-rust-demo"]
 edition = "2018"
 
 [[bin]]
-name = "rust-wii"
-
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
+name = "wut-rust-demo"
 
 [dependencies]
-libc = "0.2"
-
-[dependencies.arrayvec]
-version = "0.5.2"
-default-features = false
+cafeos = { path = "cafeos" }
+cafeos-sys = { path = "cafeos-sys" }

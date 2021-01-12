@@ -15,9 +15,11 @@
     "os": "rvl-ios",
     "pre-link-args": {
         "gcc": [
-            "-LE:/devkitPro/wut/lib",
             "-lwut",
-            "-specs=E:/devkitPro/wut/share/wut.specs"
+            "-Twut.ld",
+            "-Wl,--gc-sections",
+            "-Wl,--emit-relocs",
+            "-Wl,-znocopyreloc"
         ]
     },
     "panic-strategy": "abort",
