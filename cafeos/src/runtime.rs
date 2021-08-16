@@ -13,7 +13,7 @@ pub struct MEMDefaultHeapAllocator;
 
 unsafe impl GlobalAlloc for MEMDefaultHeapAllocator {
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
-        cafeos_sys::MEMAllocFromDefaultHeapEx.unwrap()(layout.size() as u32, layout.align() as i32)
+        cafeos_sys::MEMAllocFromDefaultHeapEx.unwrap()(layout.size() as u32, cmp::max(layout.align() as i32, 4))
             as *mut u8
     }
 
