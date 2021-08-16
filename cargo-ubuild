@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cargo +nightly build --release -Z build-std=core,alloc --target powerpc-unknown-eabi.json
+/opt/devkitpro/devkitPPC/bin/powerpc-eabi-strip -g target/powerpc-unknown-eabi/release/wut-rust-demo
+elf2rpl target/powerpc-unknown-eabi/release/wut-rust-demo wut-rust-demo.rpx
