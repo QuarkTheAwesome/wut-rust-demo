@@ -8,25 +8,27 @@
     "has-elf-tls": false,
     "has-rpath": true,
     "llvm-target": "powerpc-unknown-eabi",
-    "linker": "powerpc-eabi-gcc",
+    "linker": "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc",
     "linker-flavor": "gcc",
     "linker-is-gnu": true,
     "no-default-libraries": false,
     "os": "rvl-ios",
     "pre-link-args": {
         "gcc": [
-            "-lwut",
             "-Twut.ld",
             "-Wl,--gc-sections",
             "-Wl,--emit-relocs",
             "-Wl,-znocopyreloc"
         ]
     },
+    "post-link-args": {
+        "gcc": [
+            "-lwut"
+        ]
+    },
     "panic-strategy": "abort",
-    "relocation-model": "pic",
-    "target-env": "newlib",
+    "relocation-model": "dynamic-no-pic",
     "target-endian": "big",
-    "target-os": "rvl-ios",
     "target-family": "unix",
     "target-mcount": "_mcount",
     "target-c-int-width": "32",
