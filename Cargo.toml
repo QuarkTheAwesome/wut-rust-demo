@@ -10,3 +10,4 @@ name = "wut-rust-demo"
 [dependencies]
 cafeos = { path = "cafeos" }
 cafeos-sys = { path = "cafeos-sys" }
+cty = "0.2.1"
