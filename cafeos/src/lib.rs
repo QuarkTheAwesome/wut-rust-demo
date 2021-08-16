@@ -1,6 +1,8 @@
 #![no_std]
 #![feature(alloc_error_handler)]
 
+pub mod screen;
+
 #[macro_use]
 mod runtime;
 
