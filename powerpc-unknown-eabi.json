@@ -3,27 +3,27 @@
     "cpu": "750",
     "data-layout": "E-m:e-p:32:32-i64:64-n32",
     "dynamic-linking": false,
-    "env": "newlib",
     "executables": true,
     "has-elf-tls": false,
     "has-rpath": true,
     "llvm-target": "powerpc-unknown-eabi",
-    "linker": "/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc",
-    "linker-flavor": "gcc",
-    "linker-is-gnu": true,
+    "linker": "rust-lld",
+    "linker-flavor": "ld.lld",
+    "linker-is-gnu": false,
     "no-default-libraries": false,
-    "os": "rvl-ios",
+    "os": "wup-cafe",
     "pre-link-args": {
-        "gcc": [
+        "ld.lld": [
             "-Twut.ld",
-            "-Wl,--gc-sections",
-            "-Wl,--emit-relocs",
-            "-Wl,-znocopyreloc"
+            "--gc-sections",
+            "--emit-relocs",
+            "-znocopyreloc",
+            "--entry=main"
         ]
     },
     "post-link-args": {
-        "gcc": [
-            "-lwut"
+        "ld.lld": [
+
         ]
     },
     "panic-strategy": "abort",
