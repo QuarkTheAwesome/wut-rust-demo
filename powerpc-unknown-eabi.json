@@ -14,7 +14,6 @@
     "os": "wup-cafe",
     "pre-link-args": {
         "ld.lld": [
-            "-Twut.ld",
             "--gc-sections",
             "--emit-relocs",
             "-znocopyreloc",
