@@ -36,8 +36,8 @@ jobs:
 
       - name: Unpack devkitPPC and wut-tools
         run: |
-          tar -C / --exclude=".*" -xvf $(pwd)/cache/devkitPPC-*
-          tar -C / --exclude=".*" -xvf $(pwd)/cache/wut-tools-*
+          tar -C /opt --exclude=".*" -xvf $(pwd)/cache/devkitPPC-* --strip-components=1
+          tar -C /opt --exclude=".*" -xvf $(pwd)/cache/wut-tools-* --strip-components=1
 
       - name: Run cargo build
         uses: actions-rs/cargo@v1
