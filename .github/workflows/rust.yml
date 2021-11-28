@@ -19,6 +19,26 @@ jobs:
           override: true
           components: rust-src
 
+      - name: devkitPPC cache
+        id: cache-1
+        uses: actions/cache@v2
+        with:
+          path: cache
+          key: ${{ runner.os }}-cache-1
+
+      - name: Download devkitPPC and wut-tools
+        if: steps.cache-1.outputs.cache-hit != 'true'
+        run: |
+          mkdir cache && cd cache
+          wget "https://wii.leseratte10.de/devkitPro/devkitPPC/r39%20(2021-05-25)/devkitPPC-r39-2-linux_x86_64.pkg.tar.xz"
+          wget "https://wii.leseratte10.de/devkitPro/other-stuff/wut-tools/wut-tools-1.3.0-3-linux_x86_64.pkg.tar.xz"
+          cd ..
+
+      - name: Unpack devkitPPC and wut-tools
+        run: |
+          tar -C / -xvf $(pwd)/cache/devkitPPC-*
+          tar -C / -xvf $(pwd)/cache/wut-tools-*
+
       - name: Run cargo build
         uses: actions-rs/cargo@v1
         with:

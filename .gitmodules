@@ -1,0 +1,3 @@
+[submodule "cafeos-sys/ext/wut"]
+	path = cafeos-sys/ext/wut
+	url = https://github.com/devkitPro/wut
