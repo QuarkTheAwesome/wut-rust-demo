@@ -9,3 +9,4 @@ cty = "0.2.2"
 
 [build-dependencies]
 bindgen = "0.59.2"
+cc = "1.0.72"
