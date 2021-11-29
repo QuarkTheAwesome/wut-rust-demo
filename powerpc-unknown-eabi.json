@@ -17,7 +17,8 @@
             "--gc-sections",
             "--emit-relocs",
             "-znocopyreloc",
-            "--entry=main"
+            "--entry=main",
+            "-Tcafe.ld"
         ]
     },
     "post-link-args": {
