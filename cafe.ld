@@ -69,11 +69,14 @@ SECTIONS
       KEEP (*(.jcr))
       *(.fixup)
       *(.got1)
-      *(.got2)
       *(.branch_lt)
       *(.got)
       *(.plt)
       *(.tm_clone_table)
+   } > datamem
+
+   .got2 : {
+      *(.got2)
    } > datamem
 
    .eh_frame : {
