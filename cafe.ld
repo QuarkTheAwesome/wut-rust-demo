@@ -398,6 +398,14 @@ SECTIONS
       *(.dimport_nn_uds.*)
    } > loadmem
 
+   /* I hate to do this but the loader chokes on symbol tables that aren't 16
+      byte aligned
+      TODO: the symtab's default alignment is 4 (not 0), surely customisable */
+   .loader_padding ALIGN(16) : {
+      QUAD(0)
+      QUAD(0)
+   } > loadmem
+
    /DISCARD/ : {
       *(.abs)
       *(.comment)
